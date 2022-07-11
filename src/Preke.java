@@ -1,3 +1,5 @@
+import java.util.Comparator;
+
 public class Preke {
     // Kintamieji / parametrai / fields
     private int id;
@@ -100,5 +102,22 @@ public class Preke {
                 ", kategorija='" + kategorija + '\'' +
                 ", medziaga='" + medziaga + '\'' +
                 '}';
+    }
+
+
+    // Comparatoriai
+    static class PagalKaina implements Comparator<Preke> {
+        @Override
+        public int compare(Preke o1, Preke o2) {
+            return Double.compare(o1.kaina, o2.kaina);
+        }
+    }
+
+
+    static class PagalKieki implements Comparator<Preke> {
+        @Override
+        public int compare(Preke o1, Preke o2) {
+            return Integer.compare(o1.kiekisSandelyje, o2.kiekisSandelyje);
+        }
     }
 }

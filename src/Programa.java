@@ -21,6 +21,15 @@ public class Programa {
         isvedaBruksniukus();
         System.out.println("prekiuVidurkis(prekes) = " + prekiuVidurkis(prekes));
 
+        isvedaBruksniukus();
+        System.out.println("Surikiuotos  pagal kainą mažėjančia: ");
+        prekes.sort(new Preke.PagalKaina().reversed());
+        isvestiListaAtskiraiEilutemis(prekes);
+
+        isvedaBruksniukus();
+        System.out.println("Surikiuotos pagal kainą didėjančia, o jei kaina tokia pati, tai tada pagal kiekį mažėjančia:");
+        prekes.sort(new Preke.PagalKaina().thenComparing(new Preke.PagalKieki().reversed()));
+        isvestiListaAtskiraiEilutemis(prekes);
 
 
     }
